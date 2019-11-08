@@ -40,9 +40,9 @@ Your `Student` instances should initialize with a name, grade and an optional id
 
 ### The `.create_table` Method
 
-This is a class method that creates the students table. Use a heredoc to set a variable, `sql`, equal to the necessary SQL statement. Remember, the attributes of a student, `name`, `grade`, and `id`, should correspond to the column names you are creating in your students table. The `id` column should be the primary key. 
+----> This is a class method that creates the students table. Use a heredoc to set a variable, `sql`, equal to the necessary SQL statement. Remember, the attributes of a student, `name`, `grade`, and `id`, should correspond to the column names you are creating in your students table. The `id` column should be the primary key. 
 
-With your `sql` variable pointing to the correct SQL statement, you can execute that statement using the `#execute` method provided to us by the SQLite3-Ruby gem. Remember that this method is called on whatever object stores your connection to the database, in this case `DB[:conn]`.
+----> With your `sql` variable pointing to the correct SQL statement, you can execute that statement using the `#execute` method provided to us by the SQLite3-Ruby gem. Remember that this method is called on whatever object stores your connection to the database, in this case `DB[:conn]`.
 
 ### The `.drop_table` Method
 
@@ -50,9 +50,10 @@ This is a class method that drops the students table. Once again, create a varia
 
 ### The `#save` Method
 
-This is an instance method that saves the attributes describing a given student to the students table in our database. Once again, create a variable, `sql`, and set it equal to the SQL statement that will `INSERT` the correct data into the table. 
+----> This is an instance method that saves the attributes describing a given student to the students table in our database. Once again, create a variable, `sql`, and set it equal to the SQL statement that will `INSERT` the correct data into the table. 
 
-Use bound paremeters to pass the given student's name and grade into the SQL statement. Remember that you don't need to insert a value for the `id` column. Because it is the primary key, the `id` column's value will be automatically assigned. **However**, at the end of your `#save` method, you do need to grab the ID of the last inserted row, i.e. the row you just inserted into the database, and assign it to the be the value of the @id attribute of the given instance.
+----> Use bound paremeters to pass the given student's name and grade into the SQL statement. Remember that you don't need to insert a value for the `id` column. Because it is the primary key, the `id` column's value will be automatically assigned. **However**, 
+----> at the end of your `#save` method, you do need to grab the ID of the last_inserted_rowid, i.e. the row you just inserted into the database, and assign it to the be the value of the @id attribute of the given instance.
 
 ### The `.create` Method
 
